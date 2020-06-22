@@ -8,7 +8,7 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 *Production mode*
 
-`java -jar PiscineJava.jar`
+~/transactions/out$   `java ru.arshavin.transactions.Program`
 
 # Menu
 
@@ -34,7 +34,7 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 *Dev mode*
 
-`java -jar PiscineJava.jar --profile=dev`
+~/transactions/out$   `java ru.arshavin.transactions.Program --profile=dev`
 
 <img src="images/7.png" width=700>
 
