@@ -48,7 +48,6 @@ public class Menu {
                 showUserTransactions(arguments);
                 break;
             case 5:
-                System.out.println("Введите id пользователя и id перевода\n");
                 deleteTransfer(arguments);
                 break;
         }
@@ -60,12 +59,12 @@ public class Menu {
         }
         User user = new User(arguments[0], Integer.parseInt(arguments[1]), new TransactionLinkedList());
         transactionsService.addUser(user);
-        System.out.printf("Пользователь добавлен с id = %d\n", user.getId());
+        System.out.printf("Пользователь добавлен с id = %d\n\n", user.getId());
     }
 
     private void showBalance(String[] arguments) throws NumberFormatException {
         User user = transactionsService.getUserByID(Integer.parseInt(arguments[0]));
-        System.out.printf("%s - %.0f\n", user.getName(), transactionsService.getBalance(user));
+        System.out.printf("%s - %.0f\n\n", user.getName(), transactionsService.getBalance(user));
     }
 
     private void makeTransfer(String[] arguments) throws NumberFormatException, IllegalArgumentException {
@@ -92,7 +91,7 @@ public class Menu {
             }
             else {
                 name = transaction.getRecipient().getName();
-                System.out.printf("To %s(id = %d) %.0f with id = %s\n",
+                System.out.printf("To %s(id = %d) %.0f with id = %s\n\n",
                         name, transaction.getRecipient().getId(), transaction.getSumOfTransfer(),
                         transaction.getId().toString());
             }
@@ -110,12 +109,12 @@ public class Menu {
             if (transaction.getId().compareTo(uuid) == 0) {
                 if (transaction.getRecipient().getId() == id) {
                     name = transaction.getSender().getName();
-                    System.out.printf("Перевод From %s(id = %d) %.0f удален\n",
+                    System.out.printf("Перевод From %s(id = %d) %.0f удален\n\n",
                             name, transaction.getSender().getId(), transaction.getSumOfTransfer());
                 }
                 else {
                     name = transaction.getRecipient().getName();
-                    System.out.printf("Перевод To %s(id = %d) %.0f удален\n",
+                    System.out.printf("Перевод To %s(id = %d) %.0f удален\n\n",
                             name, transaction.getRecipient().getId(), transaction.getSumOfTransfer());
                 }
                 transactionsService.deleteTransaction(uuid, id);
@@ -128,11 +127,10 @@ public class Menu {
         System.out.println("Результаты проверки:\n");
         Transaction[] transactions = transactionsService.checkTransferPairs();
         for (Transaction transaction : transactions) {
-            System.out.printf("%s(id = %d) имеет неподтвержденный перевод id =\n%s от %s(id = %d) на сумму %.0f\n",
+            System.out.printf("%s(id = %d) имеет неподтвержденный перевод id =\n%s от %s(id = %d) на сумму %.0f\n\n",
                     transaction.getRecipient().getName(), transaction.getRecipient().getId(), transaction.getId().toString(),
                     transaction.getSender().getName(), transaction.getSender().getId(), transaction.getSumOfTransfer());
         }
-        System.exit(1);
     }
 
     private void endProgram() {

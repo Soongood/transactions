@@ -27,6 +27,7 @@ public class Parser {
         }
         menu.print();
         if (scanner.hasNextInt()) {
+            System.out.print("\033\143");
             int command = scanner.nextInt();
             if (command > 7 || !menu.isDev()  && (command == 5 || command == 6)) {
                 throw new IllegalArgumentException("Введите число от 1 до 7!\n");
