@@ -8,7 +8,8 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 *Production mode*
 
-~/transactions/out$   `java ru.arshavin.transactions.Program`
+Change directory to ~/transactions/out and write command
+`java ru.arshavin.transactions.Program`
 
 # Menu
 
@@ -34,7 +35,8 @@ Disclaimer: *Reinventing the wheel is bad, 42 makes us do this just so we can ha
 
 *Dev mode*
 
-~/transactions/out$   `java ru.arshavin.transactions.Program --profile=dev`
+Change directory to ~/transactions/out and write command
+`java ru.arshavin.transactions.Program --profile=dev`
 
 <img src="images/7.png" width=700>
 
